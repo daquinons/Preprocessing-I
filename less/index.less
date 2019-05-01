@@ -88,9 +88,14 @@ table {
 @maroon: #760C10;
 @mustard: #FCE154;
 
-// Border
 @borderRadius: 1rem;
 @borderColor: 1px solid @maroon;
+
+// Border declaration
+.rounded-border() {
+	border-radius: @borderRadius;
+	border: @borderColor
+}
 
 :root {
 	font-size: @defaultFontSize;
@@ -154,7 +159,7 @@ p {
 			&:hover {
 				background-color: @mustard;
 				color: @red;
-				border-radius: @borderRadius;
+				.rounded-border();
 			}
 		}
 
@@ -202,8 +207,7 @@ p {
 }
 
 .rounded {
-	border-radius: @borderRadius;
-	border: @borderColor;
+	.rounded-border();
 }
 
 .button {

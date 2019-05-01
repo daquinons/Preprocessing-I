@@ -192,6 +192,7 @@ p {
   background-color: #FCE154;
   color: #DA1F28;
   border-radius: 1rem;
+  border: 1px solid #760C10;
 }
 @media (max-width: 500px) {
   .container nav {
