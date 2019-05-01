@@ -53,7 +53,59 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+//Declarations
+
+// Breakpoints
+@mobileBreakpoint: 500px;
+
+// Font sizes
+@defaultFontSize: 62.5%;
+@mobileFontSize: 75%;
+@bodyFontSize: 1.75rem;
+@h1FontSize: 5rem;
+@h2FontSize: 3.5rem;
+@h3FontSize: 2.5rem;
+
+// Max width for website
+@maxWidthWebsite: 855px;
+
+// Flex declaration
+.flex-baseline-between(@justifyContent) {
+    display: flex;
+    align-items: baseline;
+    justify-content: @justifyContent;
+  }
+
+:root {
+	font-size: @defaultFontSize;
+
+	@media (max-width:@mobileBreakpoint) {
+		font-size: @mobileFontSize;
+	}
 }
 
+html, body {
+	height: 100%;
+	font-size: @bodyFontSize;
+}
+
+h1 {
+	font-size: @h1FontSize;
+}
+
+h2 {
+	font-size: @h2FontSize;
+}
+
+h3 {
+	font-size: @h3FontSize
+}
+
+.container {
+	max-width: @maxWidthWebsite;
+	margin: 0 auto;
+
+	nav {
+		.flex-baseline-between(space-between);
+	}
+}
