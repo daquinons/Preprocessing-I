@@ -60,7 +60,7 @@ table {
 
 // Font sizes
 @defaultFontSize: 62.5%;
-@mobileFontSize: 75%;
+@mobileFontSize: 90%;
 @bodyFontSize: 1.75rem;
 @h1FontSize: 5rem;
 @h2FontSize: 3.5rem;
@@ -68,6 +68,9 @@ table {
 
 // Max width for website
 @maxWidthWebsite: 855px;
+
+// Margin size
+@standardMarginSize: 1em;
 
 // Flex declaration
 .flex-baseline-between(@justifyContent) {
@@ -103,9 +106,35 @@ h3 {
 
 .container {
 	max-width: @maxWidthWebsite;
-	margin: 0 auto;
+	margin: @standardMarginSize auto;
+
+	@media (max-width:@mobileBreakpoint) {
+		margin: 0 auto;
+	}
 
 	nav {
 		.flex-baseline-between(space-between);
+		margin-bottom: @standardMarginSize * 2;
+
+		@media (max-width: @mobileBreakpoint) {
+			flex-direction: column;
+			flex-wrap: wrap;
+			align-items: center;
+			border-bottom: 1px solid black;
+
+			a {
+				margin-top: @standardMarginSize;
+				margin-bottom: @standardMarginSize;
+			}
+		}
+	}
+
+	.hero {
+		text-align: center;
+		margin-bottom: @standardMarginSize * 2;
+		img {
+			max-width: 100%;
+			margin-bottom: @standardMarginSize * 2;
+		}
 	}
 }

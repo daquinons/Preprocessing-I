@@ -135,7 +135,7 @@ table {
 }
 @media (max-width: 500px) {
   :root {
-    font-size: 75%;
+    font-size: 90%;
   }
 }
 html,
@@ -154,10 +154,36 @@ h3 {
 }
 .container {
   max-width: 855px;
-  margin: 0 auto;
+  margin: 1em auto;
+}
+@media (max-width: 500px) {
+  .container {
+    margin: 0 auto;
+  }
 }
 .container nav {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  margin-bottom: 2em;
+}
+@media (max-width: 500px) {
+  .container nav {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+  .container nav a {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+.container .hero {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.container .hero img {
+  max-width: 100%;
+  margin-bottom: 2em;
 }
