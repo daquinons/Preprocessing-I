@@ -132,11 +132,6 @@ p {
 	margin: @standardMarginSize 0;
 }
 
-.rounded {
-	border-radius: @borderRadius;
-	border: @borderColor;
-}
-
 .container {
 	max-width: @maxWidthWebsite;
 	margin: @standardMarginSize auto;
@@ -179,7 +174,7 @@ p {
 		background-color: @mustard;
 		text-align: center;
 		margin-bottom: @standardMarginSize * 2;
-		padding: @standardMarginSize 0;
+		padding: (@standardMarginSize*2) 0;
 
 		img {
 			max-width: 100%; // To resize image
@@ -203,4 +198,17 @@ p {
 			padding: @standardMarginSize;
 		}
 	}
+}
+
+.rounded {
+	border-radius: @borderRadius;
+	border: @borderColor;
+}
+
+.button {
+	text-decoration: none;
+	color: @mustard;
+	background-color: @maroon;
+	padding: @standardMarginSize;
+	margin: @standardMarginSize;
 }
