@@ -141,16 +141,17 @@ table {
 html,
 body {
   height: 100%;
-  font-size: 1.75rem;
+  font-size: 2.75rem;
+  font-family: 'Marvel', sans-serif;
 }
 h1 {
-  font-size: 5rem;
+  font-size: 6rem;
 }
 h2 {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
 }
 h3 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 hr {
   border: 0;
