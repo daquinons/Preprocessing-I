@@ -59,12 +59,12 @@ table {
 @mobileBreakpoint: 500px;
 
 // Font sizes
-@defaultFontSize: 62.5%;
-@mobileFontSize: 90%;
-@bodyFontSize: 2.75rem;
-@h1FontSize: 6rem;
-@h2FontSize: 4.5rem;
-@h3FontSize: 3.5rem;
+@defaultFontSize: 60%;
+@mobileFontSize: 80%;
+@bodyFontSize: 1.75rem;
+@h1FontSize: 5rem;
+@h2FontSize: 3.5rem;
+@h3FontSize: 2.5rem;
 
 @fontFamily: 'Marvel', sans-serif;
 
@@ -84,6 +84,13 @@ table {
 // Colors
 
 @grey: #ccc;
+@red: #DA1F28;
+@maroon: #760C10;
+@mustard: #FCE154;
+
+// Border
+@borderRadius: 1rem;
+@borderColor: 1px solid @maroon;
 
 :root {
 	font-size: @defaultFontSize;
@@ -97,28 +104,37 @@ html, body {
 	height: 100%;
 	font-size: @bodyFontSize;
 	font-family: @fontFamily;
+	background-color: @red;
 }
 
 h1 {
+	color: @maroon;
 	font-size: @h1FontSize;
 }
 
 h2 {
+	color: @maroon;
 	font-size: @h2FontSize;
 }
 
 h3 {
+	color: @maroon;
 	font-size: @h3FontSize
 }
 
 hr {
 	border: 0; 
-	border-bottom: 1px dashed @grey;
+	border-bottom: 1px dashed @red;
 	margin: @standardMarginSize 0;
 }
 
 p {
 	margin: @standardMarginSize 0;
+}
+
+.rounded {
+	border-radius: @borderRadius;
+	border: @borderColor;
 }
 
 .container {
@@ -130,18 +146,27 @@ p {
 	}
 
 	nav {
+		background-color: @maroon;
+		padding: @standardMarginSize;
 		.flex-baseline-between(space-between);
 		margin-bottom: @standardMarginSize * 2;
 
 		a {
 			text-decoration: none;
+			color: @mustard;
+			padding: @standardMarginSize;
+			&:hover {
+				background-color: @mustard;
+				color: @red;
+				border-radius: @borderRadius;
+			}
 		}
 
 		@media (max-width: @mobileBreakpoint) {
 			flex-direction: column;
 			flex-wrap: wrap;
 			align-items: center;
-			border-bottom: 1px solid black;
+			border-bottom: 1px solid @mustard;
 
 			a {
 				margin-top: @standardMarginSize;
@@ -151,8 +176,10 @@ p {
 	}
 
 	.hero {
+		background-color: @mustard;
 		text-align: center;
 		margin-bottom: @standardMarginSize * 2;
+		padding: @standardMarginSize 0;
 
 		img {
 			max-width: 100%; // To resize image
@@ -162,15 +189,14 @@ p {
 
 	.info {
 		.info {
+			background-color: @mustard;
 			margin-bottom: @standardMarginSize;
-
-			@media (max-width: @mobileBreakpoint) {
-				padding: @standardMarginSize;
-			}
+			padding: @standardMarginSize;
 		}
 	}
 
 	footer {
+		color: @mustard;
 		margin: (@standardMarginSize * 2) 0;
 
 		@media (max-width: @mobileBreakpoint) {
