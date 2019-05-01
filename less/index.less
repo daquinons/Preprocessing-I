@@ -79,6 +79,10 @@ table {
     justify-content: @justifyContent;
   }
 
+// Colors
+
+@grey: #ccc;
+
 :root {
 	font-size: @defaultFontSize;
 
@@ -102,6 +106,16 @@ h2 {
 
 h3 {
 	font-size: @h3FontSize
+}
+
+hr {
+	border: 0; 
+	border-bottom: 1px dashed @grey;
+	margin: @standardMarginSize 0;
+}
+
+p {
+	margin: @standardMarginSize 0;
 }
 
 .container {

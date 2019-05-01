@@ -152,6 +152,14 @@ h2 {
 h3 {
   font-size: 2.5rem;
 }
+hr {
+  border: 0;
+  border-bottom: 1px dashed #ccc;
+  margin: 1em 0;
+}
+p {
+  margin: 1em 0;
+}
 .container {
   max-width: 855px;
   margin: 1em auto;
