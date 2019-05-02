@@ -53,7 +53,167 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+//Declarations
+
+// Breakpoints
+@mobileBreakpoint: 500px;
+
+// Font sizes
+@defaultFontSize: 60%;
+@mobileFontSize: 80%;
+@bodyFontSize: 1.75rem;
+@h1FontSize: 5rem;
+@h2FontSize: 3.5rem;
+@h3FontSize: 2.5rem;
+
+@fontFamily: 'Marvel', sans-serif;
+
+// Max width for website
+@maxWidthWebsite: 855px;
+
+// Margin size
+@standardMarginSize: 1em;
+
+// Flex declaration
+.flex-baseline-between(@justifyContent) {
+    display: flex;
+    align-items: baseline;
+    justify-content: @justifyContent;
+  }
+
+// Colors
+
+@grey: #ccc;
+@red: #DA1F28;
+@maroon: #760C10;
+@mustard: #FCE154;
+
+@borderRadius: 1rem;
+@borderColor: 1px solid @maroon;
+
+// Border declaration
+.rounded-border() {
+	border-radius: @borderRadius;
+	border: @borderColor
 }
 
+:root {
+	font-size: @defaultFontSize;
+
+	@media (max-width:@mobileBreakpoint) {
+		font-size: @mobileFontSize;
+	}
+}
+
+html, body {
+	height: 100%;
+	font-size: @bodyFontSize;
+	font-family: @fontFamily;
+	background-color: @red;
+}
+
+h1 {
+	color: @maroon;
+	font-size: @h1FontSize;
+	font-weight: bold;
+}
+
+h2 {
+	color: @maroon;
+	font-size: @h2FontSize;
+}
+
+h3 {
+	color: @maroon;
+	font-size: @h3FontSize
+}
+
+hr {
+	border: 0; 
+	border-bottom: 1px dashed @red;
+	margin: @standardMarginSize 0;
+}
+
+p {
+	margin: @standardMarginSize 0;
+}
+
+.container {
+	max-width: @maxWidthWebsite;
+	margin: @standardMarginSize auto;
+
+	@media (max-width:@mobileBreakpoint) {
+		margin: 0 auto;
+	}
+
+	nav {
+		background-color: @maroon;
+		padding: @standardMarginSize;
+		.flex-baseline-between(space-between);
+		margin-bottom: @standardMarginSize * 2;
+
+		a {
+			text-decoration: none;
+			color: @mustard;
+			padding: @standardMarginSize;
+			&:hover {
+				background-color: @mustard;
+				color: @red;
+				.rounded-border();
+			}
+		}
+
+		@media (max-width: @mobileBreakpoint) {
+			flex-direction: column;
+			flex-wrap: wrap;
+			align-items: center;
+			border-bottom: 1px solid @mustard;
+
+			a {
+				margin-top: @standardMarginSize;
+				margin-bottom: @standardMarginSize;
+			}
+		}
+	}
+
+	.hero {
+		background-color: @mustard;
+		text-align: center;
+		margin-bottom: @standardMarginSize * 2;
+		padding: (@standardMarginSize*2) 0;
+
+		img {
+			max-width: 100%; // To resize image
+			margin-bottom: @standardMarginSize * 2;
+		}
+	}
+
+	.info {
+		.info {
+			background-color: @mustard;
+			margin-bottom: @standardMarginSize;
+			padding: @standardMarginSize;
+		}
+	}
+
+	footer {
+		color: @mustard;
+		margin: (@standardMarginSize * 2) 0;
+
+		@media (max-width: @mobileBreakpoint) {
+			padding: @standardMarginSize;
+		}
+	}
+}
+
+.rounded {
+	.rounded-border();
+}
+
+.button {
+	text-decoration: none;
+	color: @mustard;
+	background-color: @maroon;
+	padding: @standardMarginSize;
+	margin: @standardMarginSize;
+}
